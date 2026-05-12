@@ -350,7 +350,7 @@ const Komentar = () => {
                 throw error;
             }
         } catch (error) {
-            setError('Failed to post comment. Please try again.');
+            setError(error.message || 'Failed to post comment. Please try again.');
             console.error('Error adding comment: ', error);
         } finally {
             setIsSubmitting(false);
