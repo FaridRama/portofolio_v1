@@ -22,7 +22,7 @@
     "@shadcn/ui": "^0.0.4",
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.37",
-    "@supabase/supabase-js": "^2.49.9",
+    "@supabase/supabase-js": "^2.105.3",
     "add": "^2.0.6",
     "aos": "^2.3.4",
     "axios": "^1.10.0",
@@ -46,7 +46,8 @@
     "styled-components": "^6.1.13",
     "sweetalert2": "^11.15.0",
     "tailwind-merge": "^2.5.5",
-    "typewriter-effect": "^2.21.0"
+    "typewriter-effect": "^2.21.0",
+    "unicornstudio-react": "^2.1.9"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

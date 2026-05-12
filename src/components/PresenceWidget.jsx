@@ -79,7 +79,7 @@ export default function PresenceWidget() {
         glow: "shadow-green-500/20"
       },
       coding: {
-        bg: "from-blue-500/15 to-indigo-500/10",
+        bg: "from-blue-500/15 to-slate-500/10",
         border: "border-blue-500/30",
         text: "text-blue-400",
         badge: "bg-blue-500/20 border-blue-400/40",

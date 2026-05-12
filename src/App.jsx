@@ -16,7 +16,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 const Portofolio = lazy(() => import("./Pages/Portofolio"));
 const ContactPage = lazy(() => import("./Pages/Contact"));
 const ProjectDetails = lazy(() => import("./components/ProjectDetail"));
-const WelcomeScreen = lazy(() => import("./Pages/WelcomeScreen"));
+const Preloader = lazy(() => import("./components/Preloader"));
 const NotFoundPage = lazy(() => import("./Pages/404"));
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
@@ -25,7 +25,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
       <AnimatePresence mode="wait">
         {showWelcome && (
           <Suspense fallback={null}>
-            <WelcomeScreen onLoadingComplete={() => setShowWelcome(false)} />
+            <Preloader onComplete={() => setShowWelcome(false)} />
           </Suspense>
         )}
       </AnimatePresence>
