@@ -144,7 +144,7 @@ const ProjectDetails = () => {
             tech_stack: foundProject.tech_stack || foundProject.TechStack || [],
             features: foundProject.features || foundProject.Features || [],
             link: foundProject.link || foundProject.Link || "",
-            github: foundProject.github || foundProject.Github || "https://github.com/EkiZR",
+            github: foundProject.github || foundProject.Github || "https://github.com/FaridRama",
           });
         }
 
@@ -201,25 +201,25 @@ const ProjectDetails = () => {
     );
   }
 
-  const projectUrl = `https://ekizr.com/project/${toSlug(project.title)}`;
+  const projectUrl = `${window.location.origin}/project/${toSlug(project.title)}`;
 
   return (
     <>
       <Helmet>
-        <title>{project.title} — Eki Zulfar Rachman</title>
+        <title>{project.title} — Muhammad Farid Ramadhan</title>
         <meta
           name="description"
           content={
             project.description
               ? project.description.slice(0, 155)
-              : `Project ${project.title} oleh Eki Zulfar Rachman — Frontend Web Developer.`
+              : `Project ${project.title} oleh Muhammad Farid Ramadhan — FullStack Web Dev.`
           }
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={projectUrl} />
         <meta
           property="og:title"
-          content={`${project.title} — Eki Zulfar Rachman`}
+          content={`${project.title} — Muhammad Farid Ramadhan`}
         />
         <meta
           property="og:description"
@@ -237,8 +237,8 @@ const ProjectDetails = () => {
             "url": "${projectUrl}",
             "author": {
               "@type": "Person",
-              "name": "Muhammad Farid Ramahan",
-              "url": "https://ekizr.com"
+              "name": "Muhammad Farid Ramadhan",
+              "url": "${window.location.origin}"
             }
           }
         `}</script>
