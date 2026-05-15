@@ -223,7 +223,7 @@ export default function Comments() {
               <div
                 className={`relative bg-white/5 backdrop-blur-xl border rounded-2xl px-4 py-4 sm:px-5 transition-all duration-200 ${
                   comment.is_pinned
-                    ? "border-indigo-500/30"
+                    ? "border-slate-500/30"
                     : "border-white/10 hover:border-white/18"
                 }`}
               >

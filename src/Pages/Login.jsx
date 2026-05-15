@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { supabase } from "../supabase";
 import { useNavigate } from 'react-router-dom'
-import { Mail, Lock, LogIn, Sparkles, Eye, EyeOff } from 'lucide-react'
+import { Mail, Lock, LogIn, Sparkles, Eye, EyeOff, ArrowLeft } from 'lucide-react'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -34,6 +34,13 @@ export default function Login() {
         <div className="relative group">
           <div className="absolute -inset-0.5 bg-gradient-to-r from-gray-500 to-white rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-700" />
           <div className="relative bg-white/5 backdrop-blur-xl border border-white/15 rounded-2xl p-8 space-y-7">
+            <button
+              onClick={() => navigate('/')}
+              className="group flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300"
+            >
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
+              <span className="text-xs font-medium">Back to Home</span>
+            </button>
 
             {/* Header */}
             <div className="text-center space-y-3">

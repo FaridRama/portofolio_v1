@@ -163,7 +163,7 @@ const Home = () => {
         `}</script>
       </Helmet>
 
-      <div className="min-h-screen bg-[#000000] overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] relative" id="Home">
+      <div className="min-h-screen bg-transparent overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] relative" id="Home">
         
         {/* ====== UNICORN STUDIO BACKGROUND ====== */}
         {/* Menambahkan AOS dan Tailwind Transition agar animasi muncul perlahan bersamaan konten */}
@@ -185,9 +185,9 @@ const Home = () => {
         </div>
 
         {/* ====== OVERLAY GRADIENTS TO BLEND ====== */}
-        <div className="absolute inset-y-0 left-0 w-[70%] bg-gradient-to-r from-[#000000] via-[#000000]/80 to-transparent pointer-events-none z-[1]" />
-        <div className="absolute inset-x-0 top-0 h-[30%] bg-gradient-to-b from-[#000000] to-transparent pointer-events-none z-[1]" />
-        <div className="absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-[#000000] to-transparent pointer-events-none z-[1]" />
+        <div className="absolute inset-y-0 left-0 w-[70%] bg-gradient-to-r from-black/60 via-black/30 to-transparent pointer-events-none z-[1]" />
+        <div className="absolute inset-x-0 top-0 h-[30%] bg-gradient-to-b from-black/60 to-transparent pointer-events-none z-[1]" />
+        <div className="absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-black/60 to-transparent pointer-events-none z-[1]" />
 
         <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
           <div className="container mx-auto min-h-screen">

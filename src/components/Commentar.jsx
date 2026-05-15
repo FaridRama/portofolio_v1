@@ -10,7 +10,7 @@ const Comment = memo(({ comment, formatDate, index, isPinned = false }) => (
     <div 
         className={`px-4 pt-4 pb-2 rounded-xl border transition-all group hover:shadow-lg hover:-translate-y-0.5 ${
             isPinned 
-                ? 'bg-gradient-to-r from-slate-500/10 to-purple-500/10 border-slate-500/30 hover:bg-gradient-to-r hover:from-slate-500/15 hover:to-purple-500/15' 
+                ? 'bg-gradient-to-r from-slate-500/10 to-slate-500/10 border-slate-500/30 hover:bg-gradient-to-r hover:from-slate-500/15 hover:to-slate-500/15' 
                 : 'bg-white/5 border-white/10 hover:bg-white/10'
         }`}
     >
@@ -265,23 +265,23 @@ const Komentar = () => {
         fetchPinnedComment();
     }, []);
 
+    const fetchComments = useCallback(async () => {
+        const { data, error } = await supabase
+            .from('portfolio_comments')
+            .select('*')
+            .eq('is_pinned', false)
+            .order('created_at', { ascending: false });
+        
+        if (error) {
+            console.error('Error fetching comments:', error);
+            return;
+        }
+        
+        setComments(data || []);
+    }, []);
+
     // Fetch regular comments (excluding pinned) and set up real-time subscription
     useEffect(() => {
-        const fetchComments = async () => {
-            const { data, error } = await supabase
-                .from('portfolio_comments')
-                .select('*')
-                .eq('is_pinned', false)
-                .order('created_at', { ascending: false });
-            
-            if (error) {
-                console.error('Error fetching comments:', error);
-                return;
-            }
-            
-            setComments(data || []);
-        };
-
         fetchComments();
 
         // Set up real-time subscription
@@ -303,7 +303,7 @@ const Komentar = () => {
         return () => {
             subscription.unsubscribe();
         };
-    }, []);
+    }, [fetchComments]);
 
     const uploadImage = useCallback(async (imageFile) => {
         if (!imageFile) return null;
@@ -349,13 +349,17 @@ const Komentar = () => {
             if (error) {
                 throw error;
             }
+
+            // Fetch comments immediately after successful post
+            await fetchComments();
+            
         } catch (error) {
             setError(error.message || 'Failed to post comment. Please try again.');
             console.error('Error adding comment: ', error);
         } finally {
             setIsSubmitting(false);
         }
-    }, [uploadImage]);
+    }, [uploadImage, fetchComments]);
 
     const formatDate = useCallback((timestamp) => {
         if (!timestamp) return '';
@@ -445,11 +449,11 @@ const Komentar = () => {
                     border-radius: 6px;
                 }
                 .custom-scrollbar::-webkit-scrollbar-thumb {
-                    background: rgba(99, 102, 241, 0.5);
+                    background: rgba(255, 255, 255, 0.2);
                     border-radius: 6px;
                 }
                 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-                    background: rgba(99, 102, 241, 0.7);
+                    background: rgba(255, 255, 255, 0.4);
                 }
             `}</style>
         </div>
