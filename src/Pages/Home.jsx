@@ -166,7 +166,6 @@ const Home = () => {
       <div className="min-h-screen bg-transparent overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] relative" id="Home">
         
         {/* ====== UNICORN STUDIO BACKGROUND ====== */}
-        {/* Menambahkan AOS dan Tailwind Transition agar animasi muncul perlahan bersamaan konten */}
         <div 
           className={`absolute inset-0 z-0 overflow-hidden transition-all duration-[2000ms] ease-in-out ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105"}`}
           data-aos="fade-in" 
@@ -174,15 +173,15 @@ const Home = () => {
         >
           <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[100vw] h-[62.5vw] min-w-[160vh] min-h-[100vh]" style={{ left: '20%' }}>
             <UnicornScene
-              projectId="AJNpkwMIKRK0KN157zX4"
+              projectId="o5BHUP2jNIldiHKP4myT"
               width="1440px"
               height="900px"
               scale={1}
               dpi={1.5}
-              sdkUrl="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@2.1.11/dist/unicornStudio.umd.js"
-            />
+              sdkUrl="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@2.1.12/dist/unicornStudio.umd.js"/>
           </div>
         </div>
+
 
         {/* ====== OVERLAY GRADIENTS TO BLEND ====== */}
         <div className="absolute inset-y-0 left-0 w-[70%] bg-gradient-to-r from-black/60 via-black/30 to-transparent pointer-events-none z-[1]" />
